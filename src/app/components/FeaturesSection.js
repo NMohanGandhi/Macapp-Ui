@@ -1,3 +1,5 @@
+"use client";
+
 import { Check, Users, Smartphone, Code, Database, Settings } from "lucide-react";
 
 export default function FeaturesSection() {
@@ -8,11 +10,11 @@ export default function FeaturesSection() {
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 px-4">
 
         {/* LEFT CARD */}
-        <div className="rounded-2xl p-8 bg-gradient-to-br from-blue-50 to-gray-100 border border-gray-200 shadow-sm">
+        <div className="rounded-2xl p-8 bg-gradient-to-br from-green-50 to-gray-100 border border-green-100 shadow-sm">
 
           {/* HEADER */}
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 bg-blue-600 text-white flex items-center justify-center rounded-lg">
+            <div className="w-10 h-10 bg-green-500 text-white flex items-center justify-center rounded-lg">
               <Check size={18} />
             </div>
             <h3 className="text-lg font-semibold text-gray-800">
@@ -29,7 +31,7 @@ export default function FeaturesSection() {
               "Interactive Assessments",
               "Content Library & Resources",
             ].map((item, i) => (
-              <li key={i} className="flex items-center gap-2">
+              <li key={i} className="flex items-center gap-3">
                 <Check size={16} className="text-green-500" />
                 {item}
               </li>
@@ -46,7 +48,7 @@ export default function FeaturesSection() {
               {["iOS", "Android", "Web", "Teacher Portal"].map((p, i) => (
                 <span
                   key={i}
-                  className="bg-white border border-gray-300 px-3 py-1.5 rounded-md text-xs text-gray-700 shadow-sm"
+                  className="bg-white border border-gray-200 px-3 py-1.5 rounded-md text-xs text-gray-600 shadow-sm"
                 >
                   {p}
                 </span>
@@ -60,7 +62,7 @@ export default function FeaturesSection() {
 
           {/* HEADER */}
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 bg-blue-600 text-white flex items-center justify-center rounded-lg">
+            <div className="w-10 h-10 bg-green-500 text-white flex items-center justify-center rounded-lg">
               <Users size={18} />
             </div>
             <h3 className="text-lg font-semibold text-gray-800">
@@ -74,7 +76,6 @@ export default function FeaturesSection() {
 
           {/* TEAM GRID */}
           <div className="grid grid-cols-2 gap-4">
-
             {[
               ["Product Designer", "x1", <Code size={16} />],
               ["iOS Developer", "x2", <Smartphone size={16} />],
@@ -87,7 +88,7 @@ export default function FeaturesSection() {
                 key={i}
                 className="flex items-center gap-3 bg-gray-100 px-4 py-3 rounded-lg"
               >
-                <div className="w-8 h-8 bg-blue-500 text-white flex items-center justify-center rounded-md">
+                <div className="w-8 h-8 bg-green-500 text-white flex items-center justify-center rounded-md">
                   {item[2]}
                 </div>
 
@@ -100,7 +101,6 @@ export default function FeaturesSection() {
                 </div>
               </div>
             ))}
-
           </div>
 
           {/* TOTAL */}
@@ -113,7 +113,7 @@ export default function FeaturesSection() {
 
       {/* BUTTON */}
       <div className="flex justify-center mt-12">
-        <button className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-xl shadow-lg hover:opacity-90">
+        <button className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-400 text-white px-6 py-3 rounded-xl shadow-md hover:opacity-90 transition">
           ✉ Request Quote for FinTech
         </button>
       </div>

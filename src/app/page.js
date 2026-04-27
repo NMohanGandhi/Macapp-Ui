@@ -15,6 +15,13 @@ import EngagementSection from "./components/EngagementSection";
 import ClientsSection from "./components/ClientsSection";
 import FinalCTA from "./components/FinalCTA";
 import StatsSection from "./components/StatsSection";
+import BatchProgress from "./components/BatchProgress";
+import TeamsSection from "./components/TeamSection";
+import SlotsSection from "./components/SlotSelection";
+import JourneySection from "./components/JourneySection";
+import ReceiveSection from "./components/RecieveSection";
+import DreamTeamSection from "./components/DreamTeamSection";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -35,6 +42,13 @@ export default function Home() {
       <ClientsSection/>
       <FinalCTA/>
       <StatsSection/>
+      <BatchProgress/>
+      <TeamsSection/>
+      <SlotsSection/>
+      <JourneySection/>
+      <ReceiveSection/>
+      <DreamTeamSection/>
+      <Footer/>
     </div>
   );
 }

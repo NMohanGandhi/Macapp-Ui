@@ -1,10 +1,11 @@
-export default function TeamStructure() {
-  const cards = [
+"use client";
+
+export default function TeamFeatures() {
+  const data = [
     {
       title: "Core Development",
       desc: "Essential team members for your project foundation",
-      icon: "💻",
-      color: "bg-gradient-to-r from-blue-500 to-purple-500",
+      icon: "/Assets/TeamStructure/1.svg",
       tags: [
         "QA Engineer",
         "UI/UX Designer",
@@ -17,8 +18,7 @@ export default function TeamStructure() {
     {
       title: "Specialized Roles",
       desc: "Expert professionals for advanced requirements",
-      icon: "👥",
-      color: "bg-gradient-to-r from-purple-500 to-pink-500",
+      icon: "/Assets/TeamStructure/2.svg",
       tags: [
         "Business Analyst",
         "System Architect",
@@ -29,8 +29,7 @@ export default function TeamStructure() {
     {
       title: "Advanced Tech",
       desc: "Cutting-edge specialists for innovation",
-      icon: "⚡",
-      color: "bg-gradient-to-r from-orange-500 to-red-500",
+      icon: "/Assets/TeamStructure/3.svg",
       tags: [
         "AI/ML Specialists",
         "Data Scientists",
@@ -41,73 +40,44 @@ export default function TeamStructure() {
   ];
 
   return (
-    <section className="bg-white px-6 py-14">
-      
-      <div className="max-w-6xl mx-auto text-center">
+    <section className="bg-gray-50 py-16 px-6">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+        
+        {data.map((item, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-2xl border shadow-sm p-8 text-center hover:shadow-md transition"
+          >
+            {/* ✅ BIG ICON (no background wrapper) */}
+            <img
+              src={item.icon}
+              alt={item.title}
+              className="w-[80px] h-[80px] mx-auto object-contain"
+            />
 
-        {/* HEADING */}
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-          Complete <span className="text-blue-600">Team Structure</span>
-        </h2>
+            {/* Title */}
+            <h3 className="mt-4 text-lg font-semibold text-gray-800">
+              {item.title}
+            </h3>
 
-        <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
-          From core development to specialized expertise, we provide complete teams tailored to your project requirements.
-        </p>
+            {/* Description */}
+            <p className="mt-2 text-sm text-gray-500 leading-relaxed">
+              {item.desc}
+            </p>
 
-        {/* CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-          {cards.map((item, index) => (
-            
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-6 shadow-md border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition duration-300"
-            >
-              
-              {/* ICON */}
-              <div className="flex justify-center mb-4">
-                <div
-                  className={`${item.color} w-14 h-14 flex items-center justify-center rounded-xl text-white text-xl shadow-lg`}
+            {/* Tags */}
+            <div className="mt-5 flex flex-wrap justify-center gap-2">
+              {item.tags.map((tag, i) => (
+                <span
+                  key={i}
+                  className="px-3 py-1 text-xs bg-gray-100 text-gray-600 rounded-full"
                 >
-                  {item.icon}
-                </div>
-              </div>
-
-              {/* TITLE */}
-              <h4 className="font-semibold text-lg text-gray-900">
-                {item.title}
-              </h4>
-
-              {/* DESC */}
-              <p className="text-gray-600 text-sm mt-2">
-                {item.desc}
-              </p>
-
-              {/* TAGS */}
-              <div className="flex flex-wrap justify-center gap-2 mt-4">
-                {item.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-md"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
+                  {tag}
+                </span>
+              ))}
             </div>
-
-          ))}
-        </div>
-
-        {/* BOTTOM BOX */}
-        <div className="bg-blue-100 rounded-xl p-6 mt-12">
-          <h4 className="font-semibold text-gray-900">
-            All roles work seamlessly with your existing team
-          </h4>
-          <p className="text-gray-600 text-sm mt-2">
-            Our extended team members integrate directly into your workflow, using your tools, processes, and communication channels for maximum efficiency.
-          </p>
-        </div>
+          </div>
+        ))}
 
       </div>
     </section>

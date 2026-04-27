@@ -40,63 +40,65 @@ export default function Pricing() {
   ];
 
   return (
-    <section className="bg-white px-6 py-16">
+    <section className="bg-white px-4 md:px-6 py-16">
       <div className="max-w-6xl mx-auto text-center">
 
         {/* HEADING */}
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+        <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
           Transparent &{" "}
           <span className="text-blue-600">Flexible Packages</span>
         </h2>
 
-        <p className="text-gray-600 mt-3">
+        <p className="text-gray-600 mt-3 text-sm md:text-base">
           Choose the perfect package for your needs. Scale up or down with 30 days notice.
         </p>
 
-        {/* 🔥 PREMIUM TABS */}
+        {/* 🔥 TABS (Mobile scroll, Desktop same) */}
         <div className="mt-10">
-          <div className="w-full bg-gray-100 rounded-2xl p-3 flex items-center">
+          <div className="w-full bg-gray-100 rounded-2xl p-3 overflow-x-auto md:overflow-visible">
 
-            {tabs.map((tab, i) => (
-              <div key={tab.id} className="flex items-center flex-1">
+            <div className="flex min-w-max md:min-w-0 md:flex md:items-center gap-3 md:gap-0">
 
-                <button
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex-1 flex items-center justify-center gap-3 py-4 rounded-xl transition-all duration-300 font-medium text-base
-                  
-                  ${
-                    activeTab === tab.id
-                      ? "bg-blue-600 text-white shadow-md scale-[1.02]"
-                      : "text-gray-700 hover:bg-gray-200"
-                  }`}
-                >
-                  {/* ✅ BIGGER ICON */}
-                  <img
-                    src={tab.icon}
-                    alt={tab.label}
-                    className="w-8 h-8 object-contain"
-                  />
-                  {tab.label}
-                </button>
+              {tabs.map((tab, i) => (
+                <div key={tab.id} className="flex items-center md:flex-1">
 
-                {i !== tabs.length - 1 && (
-                  <div className="w-px h-8 bg-gray-300 mx-3"></div>
-                )}
+                  <button
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`flex items-center justify-center gap-2 px-4 py-3 md:py-4 rounded-xl whitespace-nowrap transition font-medium text-sm md:text-base md:flex-1
+                    ${
+                      activeTab === tab.id
+                        ? "bg-blue-600 text-white shadow-md"
+                        : "bg-white md:bg-transparent text-gray-700 md:hover:bg-gray-200"
+                    }`}
+                  >
+                    <img
+                      src={tab.icon}
+                      alt={tab.label}
+                      className="w-6 h-6 md:w-8 md:h-8 object-contain"
+                    />
+                    {tab.label}
+                  </button>
 
-              </div>
-            ))}
+                  {/* Divider ONLY desktop */}
+                  {i !== tabs.length - 1 && (
+                    <div className="hidden md:block w-px h-8 bg-gray-300 mx-3"></div>
+                  )}
+
+                </div>
+              ))}
+
+            </div>
 
           </div>
         </div>
 
         {/* 🔥 CARDS */}
-        <div className="grid md:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12">
           {plans.map((plan, index) => (
             <div
               key={index}
               onClick={() => setActiveCard(index)}
               className={`relative cursor-pointer rounded-2xl p-6 transition duration-300
-              
               ${
                 activeCard === index
                   ? "border-2 border-blue-500 bg-white shadow-lg"
@@ -110,16 +112,16 @@ export default function Pricing() {
                 </div>
               )}
 
-              {/* ✅ BIGGER IMAGE */}
+              {/* IMAGE */}
               <div className="flex justify-center mb-6">
                 <img
                   src={plan.img}
                   alt="plan"
-                  className="w-28 h-28 object-contain drop-shadow-lg"
+                  className="w-24 h-24 md:w-28 md:h-28 object-contain drop-shadow-lg"
                 />
               </div>
 
-              <h3 className="text-xl font-bold text-gray-900">
+              <h3 className="text-lg md:text-xl font-bold text-gray-900">
                 {plan.title}
                 <span className="text-sm text-gray-500"> /month</span>
               </h3>
@@ -130,14 +132,14 @@ export default function Pricing() {
 
               <ul className="mt-4 space-y-2 text-left">
                 {plan.features.map((f, i) => (
-                  <li key={i} className="flex gap-2 text-gray-700">
+                  <li key={i} className="flex gap-2 text-gray-700 text-sm">
                     <span className="text-green-500">✔</span>
                     {f}
                   </li>
                 ))}
               </ul>
 
-              <button className="mt-6 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+              <button className="mt-6 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition text-sm md:text-base">
                 Request Proposal
               </button>
 
