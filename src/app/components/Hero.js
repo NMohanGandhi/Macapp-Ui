@@ -5,7 +5,7 @@ export default function Hero() {
   {/* IMAGE */}
   <div className="flex justify-center mb-4">
     <img
-      src="/assets/heroimg.png"
+      src="/Assets/heroimg.png"
       alt="hero"
       className="w-64 md:w-80"
     />
