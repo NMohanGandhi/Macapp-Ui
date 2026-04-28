@@ -21,11 +21,10 @@ export default function Home() {
           
           {/* Logo */}
           <img
-            src="/assets/MaccappName.svg"
+            src="/Assets/MaccappName.svg"
             alt="logo"
             className="h-8 md:h-8 w-auto"
           />
-
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-10">
             
